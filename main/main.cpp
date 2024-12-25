@@ -1,4 +1,10 @@
-void setup() {}
+#include <iostream>
+
+#include "greeter.h"
+
+void setup() {
+  std::cout << greeter::greet("world") << std::endl;
+}
 
 void loop() {}
 
