@@ -31,6 +31,7 @@ RUN mkdir -p /opt && cd /opt \
 FROM mcr.microsoft.com/devcontainers/cpp:1-debian-11
 
 COPY --from=install-esp-idf /opt/esp-idf /opt/esp-idf
+COPY --from=install-esp-idf --chown=vscode /root/.espressif /home/vscode/.espressif
 
 ARG REINSTALL_CMAKE_VERSION_FROM_SOURCE="none"
 
@@ -54,7 +55,6 @@ RUN apt-get update && apt-get -y install --no-install-recommends \
     dfu-util \
     libusb-1.0-0
 
-COPY ./entrypoint.sh /opt/entrypoint.sh
 COPY ./idf /opt/idf
 RUN echo "source /opt/esp-idf/export.sh" >> /home/vscode/.bashrc \
     && ln -s /opt/idf /usr/bin/idf
