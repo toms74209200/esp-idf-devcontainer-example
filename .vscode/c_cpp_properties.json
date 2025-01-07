@@ -12,9 +12,9 @@
                 ]
             },
             "defines": [],
-            "compilerPath": "/usr/bin/g++",
-            "cStandard": "c17",
-            "cppStandard": "c++17",
+            "compilerPath": "/home/vscode/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32-elf-c++",
+            "cStandard": "c23",
+            "cppStandard": "c++23",
             "configurationProvider": "ms-vscode.cmake-tools"
         }
     ],
