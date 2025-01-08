@@ -1,7 +1,7 @@
 # http://clang.llvm.org/docs/ClangFormatStyleOptions.html
 
 BasedOnStyle: Google
-Standard: c++20
+Standard: Latest
 AllowShortFunctionsOnASingleLine: Empty
 IncludeBlocks: Preserve
 IndentPPDirectives: AfterHash
