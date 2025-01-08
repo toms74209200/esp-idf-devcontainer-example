@@ -20,12 +20,12 @@ ARG ESP_IDF_VERSTION="latest"
 ARG TARGET_DEVICE="esp32"
 
 RUN mkdir -p /opt && cd /opt \
-    && git clone --filter=blob:none --no-checkout -b ${ESP_IDF_VERSTION} --recursive https://github.com/espressif/esp-idf.git \
+    && git clone --filter=blob:none --no-checkout --depth 1 --single-branch -b ${ESP_IDF_VERSTION} --recursive https://github.com/espressif/esp-idf.git \
     && cd /opt/esp-idf \
     && git sparse-checkout init --cone \
     && git sparse-checkout set components tools \
     && git checkout \
-    && git submodule update --init --recursive \
+    && git submodule update --init --recursive --recommend-shallow --depth 1 \
     && ./install.sh ${TARGET_DEVICE}
 
 FROM mcr.microsoft.com/devcontainers/cpp:1-debian-12
